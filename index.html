@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TALLER</h1>
+    <p>Bueno nos dedicamos al manteninimiento de autos, junto con el manejo y gestión 
+        de estos para facilitar la interacción con sus clinetes y clientes con sus proveedores
+    </p>
+
+    <ul>manteninimiento</ul>
+    <ul>gestión</ul>
+    <ul>Personalización</ul>
+
+    <label>Nombre</label>
+    <input type="text"><br>
+    <label for="">Telefono</label>
+    <input type="tel"><br><br>
+    <textarea name="" id=""></textarea><br>
+    <button>Guardar Cliente</button><br><br>
+    
+    <table>
+
+        <tr>
+
+            <th>Cliente</th>
+            <th>Producto</th>
+            <th>Estado</th>
+
+        </tr>
+        <tr>
+
+            <td>Axel</td>
+            <td>Carro</td>
+            <td>Pendiente</td>
+
+        </tr>
+
+        <tr>
+            <td>Carlitos</td>
+            <td>BMW</td>
+            <td>En proceso</td>
+
+        </tr>
+
+        <tr>
+            <td>Franco</td>
+            <td>Tsuru</td>
+            <td>Entregado</td>
+        </tr>
+
+    </table>
+
+    <div id="resultado"></div>
+ 
+<script>
+const clientes = [
+  { nombre: "Ana López", telefono: "5512345678" },
+  { nombre: "Luis Pérez", telefono: "5587654321" }
+];
+ 
+let html1 = "";
+clientes.forEach(function(c) {
+  html += c.nombre + " - " + c.telefono + "<br>";
+});
+document.getElementById("resultado").innerHTML = html;
+</script>
+
+
+<div id="resultado-pendientes"></div>
+ 
+<script>
+const pedidos = [
+  { cliente: "Ana López", estado: "Pendiente" },
+  { cliente: "Luis Pérez", estado: "Entregado" },
+  { cliente: "Karla Ruiz", estado: "Pendiente" }
+];
+ 
+const pendientes = pedidos.filter(function(p) {
+  return p.estado === "Pendiente";
+});
+ 
+let html = "";
+pendientes.forEach(function(p) {
+  html += p.cliente + " - " + p.estado + "<br>";
+});
+document.getElementById("resultado-pendientes").innerHTML = html;
+</script>
+
+<button onclick="marcarEntregado()">Marcar como entregado</button>
+<p id="mensaje">Estado: Pendiente</p>
+ 
+<script>
+function marcarEntregado() {
+  document.getElementById("mensaje").innerText = "Estado: Entregado";
+}
+</script>
+
+
+
+</body>
+</html>
