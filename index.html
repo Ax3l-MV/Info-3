@@ -11,18 +11,21 @@
         de estos para facilitar la interacción con sus clinetes y clientes con sus proveedores
     </p>
 
-    <ul>manteninimiento</ul>
-    <ul>gestión</ul>
-    <ul>Personalización</ul>
+    <ul>
+      <li>manteninimiento</li>
+      <li>gestión</li>
+      <li>personalizacion</li>
+    </ul>
 
-    <label>Nombre</label>
+    <form>
+    <label>Nombre </label>
     <input type="text"><br>
     <label for="">Telefono</label>
     <input type="tel"><br><br>
     <textarea name="" id=""></textarea><br>
     <button>Guardar Cliente</button><br><br>
-    
-    <table>
+    </form>
+    <table border="1">
 
         <tr>
 
@@ -34,7 +37,7 @@
         <tr>
 
             <td>Axel</td>
-            <td>Carro</td>
+            <td>Chevy</td>
             <td>Pendiente</td>
 
         </tr>
@@ -52,7 +55,7 @@
             <td>Entregado</td>
         </tr>
 
-    </table>
+    </table><br>
 
     <div id="resultado"></div>
  
@@ -62,7 +65,7 @@ const clientes = [
   { nombre: "Luis Pérez", telefono: "5587654321" }
 ];
  
-let html1 = "";
+let html = "";
 clientes.forEach(function(c) {
   html += c.nombre + " - " + c.telefono + "<br>";
 });
@@ -82,12 +85,12 @@ const pedidos = [
 const pendientes = pedidos.filter(function(p) {
   return p.estado === "Pendiente";
 });
- 
-let html = "";
+//aqui empieza segunda parte 
+let htmlpendientes = "";
 pendientes.forEach(function(p) {
-  html += p.cliente + " - " + p.estado + "<br>";
+  htmlpendientes += p.cliente + " - " + p.estado + "<br>";
 });
-document.getElementById("resultado-pendientes").innerHTML = html;
+document.getElementById("resultado-pendientes").innerHTML = htmlpendientes;
 </script>
 
 <button onclick="marcarEntregado()">Marcar como entregado</button>
